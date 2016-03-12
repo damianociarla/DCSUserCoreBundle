@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="dcs_user.core.service.user_factory.class">DCS\User\CoreBundle\Service\UserFactory</parameter>
+    </parameters>
+
+    <services>
+        <service id="dcs_user.core.service.user_factory" class="%dcs_user.core.service.user_factory.class%">
+            <argument>%dcs_user.core.model_class%</argument>
+        </service>
+    </services>
+</container>

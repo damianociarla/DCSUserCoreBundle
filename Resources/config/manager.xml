@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="dcs_user.core.manager.delete.class">DCS\User\CoreBundle\Manager\Delete</parameter>
+        <parameter key="dcs_user.core.manager.save.class">DCS\User\CoreBundle\Manager\Save</parameter>
+    </parameters>
+
+    <services>
+        <service id="dcs_user.core.manager.delete" class="%dcs_user.core.manager.delete.class%">
+            <argument type="service" id="event_dispatcher" />
+        </service>
+        <service id="dcs_user.core.manager.save" class="%dcs_user.core.manager.save.class%">
+            <argument type="service" id="event_dispatcher" />
+        </service>
+    </services>
+</container>
