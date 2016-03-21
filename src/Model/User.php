@@ -65,6 +65,8 @@ abstract class User implements UserInterface, EquatableInterface, \Serializable
         $this->locked = false;
         $this->expired = false;
         $this->credentialsExpired = false;
+
+        $this->initRoles();
     }
 
     /**

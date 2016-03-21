@@ -1,0 +1,22 @@
+{
+  "name": "dcs/user-core-bundle",
+  "type": "symfony-bundle",
+  "description": "Part of DCSUser",
+  "require": {
+    "php": ">=5.3.9",
+    "symfony/framework-bundle": "~2.8|~3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5"
+  },
+  "autoload": {
+    "psr-4": {
+      "DCS\\User\\CoreBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DCS\\User\\CoreBundle\\Tests\\": "tests"
+    }
+  }
+}

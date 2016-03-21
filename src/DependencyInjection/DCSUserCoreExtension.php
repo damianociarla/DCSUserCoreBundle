@@ -16,7 +16,7 @@ class DCSUserCoreExtension extends Extension
         $container->setParameter('dcs_user.core.model_class', $config['model_class']);
         $container->setParameter('dcs_user.core.repository_service', $config['repository_service']);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('helper.xml');
 
         $loader->load('manager.xml');
