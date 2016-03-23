@@ -1,7 +1,7 @@
 {
   "name": "dcs/user-core-bundle",
   "type": "symfony-bundle",
-  "description": "Part of DCSUser",
+  "description": "The DCSUserCoreBundle is the main part of a set of libraries that help you in the most common tasks for managing users",
   "require": {
     "php": ">=5.3.9",
     "symfony/framework-bundle": "~2.8|~3.0"
