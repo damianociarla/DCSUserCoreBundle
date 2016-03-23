@@ -2,6 +2,10 @@
 
 namespace DCS\User\CoreBundle\Service;
 
+use DCS\User\CoreBundle\DCSUserCoreEvents;
+use DCS\User\CoreBundle\Event\UserEvent;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
 class UserFactory implements UserFactoryInterface
 {
     /**
@@ -9,9 +13,15 @@ class UserFactory implements UserFactoryInterface
      */
     private $className;
 
-    public function __construct($className)
+    /**
+     * @var EventDispatcherInterface
+     */
+    private $dispatcher;
+
+    public function __construct($className, EventDispatcherInterface $dispatcher)
     {
         $this->className = $className;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -19,6 +29,10 @@ class UserFactory implements UserFactoryInterface
      */
     public function create()
     {
-        return (new $this->className());
+        $user = (new $this->className());
+
+        $this->dispatcher->dispatch(DCSUserCoreEvents::USER_CREATED, new UserEvent($user));
+
+        return $user;
     }
 }

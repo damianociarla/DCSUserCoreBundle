@@ -11,6 +11,7 @@
     <services>
         <service id="dcs_user.core.service.user_factory" class="%dcs_user.core.service.user_factory.class%">
             <argument>%dcs_user.core.model_class%</argument>
+            <argument type="service" id="event_dispatcher" />
         </service>
     </services>
 </container>

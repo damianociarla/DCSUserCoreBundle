@@ -9,6 +9,8 @@ interface UserFactoryInterface
     /**
      * Create e new empty instance of User
      *
+     * @see DCS\User\CoreBundle\DCSUserCoreEvents::USER_CREATED
+     * 
      * @return UserInterface
      */
     public function create();
