@@ -47,45 +47,45 @@ Several bundles have been developed that help you perform common tasks for user 
 
 [https://github.com/damianociarla/DCSUserPersistenceORMBundle](https://github.com/damianociarla/DCSUserPersistenceORMBundle) 
 
-*This bundle provides you the implementation of the persistence on database using Doctrine ORM. **Requirerment:** DCSUserCoreBundle*
+This bundle provides you the implementation of the persistence on database using Doctrine ORM. **Requirerment:** DCSUserCoreBundle
 
 ##### Role management
 
 [https://github.com/damianociarla/DCSRoleCoreBundle](https://github.com/damianociarla/DCSRoleCoreBundle) 
 
-*This bundle provides the basic services for the role management. **Requirerment:** DCSUserCoreBundle*
+This bundle provides the basic services for the role management. **Requirerment:** DCSUserCoreBundle
 
 [https://github.com/damianociarla/DCSRoleProviderORMBundle](https://github.com/damianociarla/DCSRoleProviderORMBundle) 
 
-*This bundle provides you with the management of user roles using Doctrine ORM. **Requirerment:** DCSRoleCoreBundle*
+This bundle provides you with the management of user roles using Doctrine ORM. **Requirerment:** DCSRoleCoreBundle
 
 [https://github.com/damianociarla/DCSRoleProviderArrayBundle](https://github.com/damianociarla/DCSRoleProviderArrayBundle) 
 
-*This bundle provides you with the management of roles having the configuration as an array. **Requirerment:** DCSRoleCoreBundle*
+This bundle provides you with the management of roles having the configuration as an array. **Requirerment:** DCSRoleCoreBundle
 
 ##### Security
 
 [https://github.com/damianociarla/DCSSecurityCoreBundle](https://github.com/damianociarla/DCSSecurityCoreBundle) 
 
-*This bundle provides the basic services for the management of security. **Requirerment:** DCSUserCoreBundle*
+This bundle provides the basic services for the management of security. **Requirerment:** DCSUserCoreBundle
 
 [https://github.com/damianociarla/DCSSecurityAuthFormBundle](https://github.com/damianociarla/DCSSecurityAuthFormBundle) 
 
-*This bundle provides an authentication system using the login form. **Requirerment:** DCSSecurityCoreBundle*
+This bundle provides an authentication system using the login form. **Requirerment:** DCSSecurityCoreBundle
 
 ##### Password reset management
 
 [https://github.com/damianociarla/DCSPasswordResetCoreBundle](https://github.com/damianociarla/DCSPasswordResetCoreBundle) 
 
-*This bundle provides the logic to perform a complete flow of password change request. **Requirerment:** DCSUserCoreBundle, DCSSecurityCoreBundle*
+This bundle provides the logic to perform a complete flow of password change request. **Requirerment:** DCSUserCoreBundle, DCSSecurityCoreBundle
 
 [https://github.com/damianociarla/DCSPasswordResetPersistenceORMBundle](https://github.com/damianociarla/DCSPasswordResetPersistenceORMBundle) 
 
-*This bundle provides the implementation of the persistence on database using Doctrine ORM of all password requests. **Requirerment:** DCSPasswordResetCoreBundle*
+This bundle provides the implementation of the persistence on database using Doctrine ORM of all password requests. **Requirerment:** DCSPasswordResetCoreBundle
 
 [https://github.com/damianociarla/DCSPasswordResetExplainViewBundle](https://github.com/damianociarla/DCSPasswordResetExplainViewBundle) 
 
-*This bundle provides the visual display of password recovery services through view and form. **Requirerment:** DCSPasswordResetCoreBundle*
+This bundle provides the visual display of password recovery services through view and form. **Requirerment:** DCSPasswordResetCoreBundle
 
 ## Prerequisites
 
