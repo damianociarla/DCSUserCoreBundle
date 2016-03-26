@@ -2,6 +2,14 @@
   "name": "dcs/user-core-bundle",
   "type": "symfony-bundle",
   "description": "The DCSUserCoreBundle is the main part of a set of libraries that help you in the most common tasks for managing users",
+  "keywords": ["User management"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Damiano Ciarla",
+      "email": "damiano.ciarla@gmail.org"
+    }
+  ],
   "require": {
     "php": ">=5.3.9",
     "symfony/framework-bundle": "~2.8|~3.0"
@@ -10,7 +18,7 @@
     "phpunit/phpunit": "^5"
   },
   "suggest": {
-    "dcs/user-persistence-orm-bundle": "~1.0@dev"
+    "dcs/user-persistence-orm-bundle": "Provides the implementation of the persistence on database using Doctrine ORM"
   },
   "autoload": {
     "psr-4": {
