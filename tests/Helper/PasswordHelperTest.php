@@ -11,7 +11,7 @@ class PasswordHelperTest extends \PHPUnit_Framework_TestCase
     {
         $user = new TestUser();
 
-        $mockUserPasswordEncoder = $this->getMock('Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface');
+        $mockUserPasswordEncoder = $this->createMock('Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface');
         $mockUserPasswordEncoder->expects($this->any())
             ->method('encodePassword')
             ->with($this->equalTo($user), $this->equalTo('plain-password'))
@@ -28,7 +28,7 @@ class PasswordHelperTest extends \PHPUnit_Framework_TestCase
         $user = new TestUser();
         $newPassword = 'new-plain-password';
 
-        $mockUserPasswordEncoder = $this->getMock('Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface');
+        $mockUserPasswordEncoder = $this->createMock('Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface');
         $mockUserPasswordEncoder->expects($this->any())
             ->method('encodePassword')
             ->with($this->equalTo($user), $this->equalTo($newPassword))
