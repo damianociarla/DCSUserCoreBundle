@@ -33,8 +33,6 @@ class CreateUserCommand extends ContainerAwareCommand
         $user->setUsername($username);
 
         $this->getContainer()->get('dcs_user.core.helper.password')->updateUserPassword($user, $password);
-
-        $userSave = $this->getContainer()->get('dcs_user.manager.save');
-        $userSave($user);
+        $this->getContainer()->get('dcs_user.manager.save')->__invoke($user);
     }
 }
