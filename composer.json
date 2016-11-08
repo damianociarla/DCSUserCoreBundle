@@ -15,7 +15,9 @@
     "symfony/framework-bundle": "~2.8|~3.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5"
+    "phpunit/phpunit": "^5",
+    "satooshi/php-coveralls": "~1.0",
+    "phpunit/phpcov": "3.*"
   },
   "suggest": {
     "dcs/user-persistence-orm-bundle": "Provides the implementation of the persistence on database using Doctrine ORM"
