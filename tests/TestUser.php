@@ -8,6 +8,6 @@ class TestUser extends User
 {
     protected function initRoles()
     {
-        return [];
+        $this->roles = [];
     }
 }
