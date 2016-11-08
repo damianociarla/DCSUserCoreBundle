@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/damianociarla/DCSUserCoreBundle.svg?branch=master)](https://travis-ci.org/damianociarla/DCSUserCoreBundle) 
+[![Coverage Status](https://coveralls.io/repos/github/damianociarla/DCSUserCoreBundle/badge.svg?branch=master)](https://coveralls.io/github/damianociarla/DCSUserCoreBundle?branch=master)
+
 # DCSUserCoreBundle
 
 The **DCSUserCoreBundle** is the main part of a set of libraries that help you in the most common 
