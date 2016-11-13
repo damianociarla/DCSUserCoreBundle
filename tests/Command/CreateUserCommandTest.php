@@ -8,17 +8,9 @@ use DCS\User\CoreBundle\Manager\Save;
 use DCS\User\CoreBundle\Model\UserInterface;
 use DCS\User\CoreBundle\Service\UserFactoryInterface;
 use DCS\User\CoreBundle\Tests\TestUser;
-use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Input\Input;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\Output;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Output\StreamOutput;
+use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class CreateUserCommandTest extends \PHPUnit_Framework_TestCase
 {
@@ -40,11 +32,12 @@ class CreateUserCommandTest extends \PHPUnit_Framework_TestCase
 
     public function testExecuteMethod()
     {
-        $input = $this->getMockBuilder(InputInterface::class)->getMock();
-        $input->expects($this->at(0))->method('getOption')->willReturn('acme');
-        $input->expects($this->at(1))->method('getOption')->willReturn('password');
+        $input = new ArrayInput([
+            '--username' => 'acme',
+            '--password' => '123'
+        ]);
 
-        $output = $this->getMockBuilder(OutputInterface::class)->getMock();
+        $output = new NullOutput();
 
         $userFactory = $this->getMockBuilder(UserFactoryInterface::class)->getMock();
         $userFactory->expects($this->once())->method('create')->willReturn(new TestUser());
@@ -55,10 +48,10 @@ class CreateUserCommandTest extends \PHPUnit_Framework_TestCase
         $save = $this->getMockBuilder(Save::class)->disableOriginalConstructor()->getMock();
         $save->expects($this->once())->method('__invoke')->with($this->isInstanceOf(UserInterface::class));
 
-        $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
-        $container->expects($this->at(0))->method('get')->with('dcs_user.factory')->willReturn($userFactory);
-        $container->expects($this->at(1))->method('get')->with('dcs_user.core.helper.password')->willReturn($passwordHelper);
-        $container->expects($this->at(2))->method('get')->with('dcs_user.manager.save')->willReturn($save);
+        $container = new Container();
+        $container->set('dcs_user.factory', $userFactory);
+        $container->set('dcs_user.core.helper.password', $passwordHelper);
+        $container->set('dcs_user.manager.save', $save);
 
         $command = new CreateUserCommand();
         $command->setContainer($container);
